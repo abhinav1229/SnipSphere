@@ -16,7 +16,9 @@
         ]
 			},
 			"timeComplexity": "O(n)",
-			"spaceComplexity": "O(1)"
+      "timeDescription" : "",
+			"spaceComplexity": "O(1)", 
+      "spaceDescription": ""
 		},
 
     
@@ -37,7 +39,9 @@
         ]
 			},
 			"timeComplexity": "O(n)",
-			"spaceComplexity": "O(1)"
+      "timeDescription" : "",
+			"spaceComplexity": "O(1)", 
+      "spaceDescription": ""
 		}, 
 
     {
@@ -57,7 +61,9 @@
         ]
 			},
 			"timeComplexity": "O(n)",
-			"spaceComplexity": "O(1)"
+      "timeDescription" : "",
+			"spaceComplexity": "O(1)", 
+      "spaceDescription": ""
     }
 	], 
 
@@ -79,12 +85,34 @@
         ]
 			},
 			"timeComplexity": "O(n)",
-			"spaceComplexity": "O(1)"
+      "timeDescription" : "",
+			"spaceComplexity": "O(1)", 
+      "spaceDescription": ""
     }
   ],
 
-  "stack" :[
-    
+  "string" :[
+     {
+      "title": "Check if character is Vowel or not",
+			"contributor": "Abhinav",
+			"contributorId": "https://github.com/abhinav1229",
+			"description": "Check if the character is vowel by comparing with vowel letters.",
+			"snippet": {
+				"cpp": [
+          "bool isVowel(char s){\n   return s == 'a' || s == 'e' || s == 'i' || s == 'o'  || s == 'u';\n}"
+        ],
+				"java": [
+          "Java..."
+        ],
+				"python": [
+          "python..."
+        ]
+			},
+			"timeComplexity": "O(1)",
+      "timeDescription" : "",
+			"spaceComplexity": "O(1)", 
+      "spaceDescription": ""
+    }
   ], 
 
   "queue" : [
@@ -92,10 +120,97 @@
   ], 
 
   "tree" : [
-    
+    {
+      "title": "Print Inorder",
+			"contributor": "Abhinav",
+			"contributorId": "https://github.com/abhinav1229",
+			"description": "Prints the inorder traversal for testing.",
+			"snippet": {
+				"cpp": [
+          "void printInorder(TreeNode* root) {\n    if(!root) return;\n    printInorder(root->left);\n    cout << root->val << \" \";\n    printInorder(root->right);\n}"
+        ],
+				"java": [
+          "Java..."
+        ],
+				"python": [
+          "python..."
+        ]
+			},
+			"timeComplexity": "O(n)",
+      "timeDescription" : "",
+			"spaceComplexity": "O(n)", 
+      "spaceDescription": "Function Calling Stack"
+    }, 
+    {
+      "title": "Get Inorder",
+			"contributor": "Abhinav",
+			"contributorId": "https://github.com/abhinav1229",
+			"description": "Pass the empty vector to store the inorder traversal of the binary tree",
+			"snippet": {
+				"cpp": [
+          "void getInorder(TreeNode* root, vector<int>& vt) {\n    if(!root) return;\n    getInorder(root->left, vt);\n    vt.push_back(root->val);\n    getInorder(root->right, vt);\n}"
+        ],
+				"java": [
+          "Java..."
+        ],
+				"python": [
+          "python..."
+        ]
+			},
+			"timeComplexity": "O(n)",
+      "timeDescription" : "",
+			"spaceComplexity": "O(n)", 
+      "spaceDescription": "Function calling stack"
+    },
+    {
+      "title": "Get Inorder Stack",
+			"contributor": "Abhinav",
+			"contributorId": "https://github.com/abhinav1229",
+			"description": "Check if the character is vowel by comparing with vowel letters.",
+			"snippet": {
+				"cpp": [
+          "cpp..."
+        ],
+				"java": [
+          "Java..."
+        ],
+				"python": [
+          "python..."
+        ]
+			},
+			"timeComplexity": "O(1)",
+      "timeDescription" : "",
+			"spaceComplexity": "O(1)", 
+      "spaceDescription": ""
+    }, 
+    {
+      "title": "Get Preorder",
+			"contributor": "Abhinav",
+			"contributorId": "https://github.com/abhinav1229",
+			"description": "Pass an empty vector to store the preorder result",
+			"snippet": {
+				"cpp": [
+          "void getPreorder(TreeNode* root, vector<int>& vt) {\n    if(!root) return;\n    getPreorder(root->left, vt);\n    vt.push_back(root->val);\n    getPreorder(root->right, vt);\n}"
+        ],
+				"java": [
+          "Java..."
+        ],
+				"python": [
+          "python..."
+        ]
+			},
+			"timeComplexity": "O(1)",
+      "timeDescription" : "",
+			"spaceComplexity": "O(1)", 
+      "spaceDescription": ""
+    }
   ], 
 
   "graph" : [
     
-  ]  
+  ], 
+  
+  "stack" : [
+    
+  ]
 }

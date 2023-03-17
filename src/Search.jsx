@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react"
 
-import Snippet from './Snippet'
+import Snippet from './Snippet.jsx'
 import data from './data.json';
 
 export default function Search(props) {

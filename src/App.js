@@ -3,8 +3,8 @@ import './css/topics.css'
 import './css/code.css'
 import './css/snippet.css'
 import './css/search.css'
-import Header from './Header'
-import Topics from './Topics'
+import Header from './Header.jsx'
+import Topics from './Topics.jsx'
 
 
 
