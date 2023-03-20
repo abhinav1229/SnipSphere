@@ -1,4 +1,4 @@
-.search-container{
+.search-container {
   width: 90vw;
   display: flex;
   flex-direction: column;
@@ -9,59 +9,72 @@
 }
 
 @media screen and (min-width: 720px) {
- .search-container{
-   width: 70vw;
- }
+  .search-container {
+    width: 70vw;
+  }
 }
 
 @media screen and (min-width: 990px) {
- .search-container{
-   width: 60vw;
- }
+  .search-container {
+    width: 60vw;
+  }
 }
 
-
 @media screen and (min-width: 1150px) {
- .search-container{
-   width: 50vw;
- }
+  .search-container {
+    width: 50vw;
+  }
 }
 
 @media screen and (min-width: 1350px) {
- .search-container{
-   width: 40vw;
- }
+  .search-container {
+    width: 40vw;
+  }
 }
 
-input[type='search']{
-    font-size: 20px;
-    outline: none;
-    width: 90%;
-    border: none;
-    background: burlywood;
-    border-radius: 7px;
-    font-weight: 500;
-    padding: 5px 10px;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 150ms linear;
+input[type='search'] {
+  font-size: 20px;
+  outline: none;
+  width: 90%;
+  border: none;
+  background-color: burlywood;
+  border-radius: 7px;
+  font-weight: 500;
+  padding: 5px 10px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms linear;
 }
 
-input[type='search']:focus{
-  background: #f9be71;
-}
-
-input[type='search']::placeholder{
+input[type='search']::placeholder {
   color: #000000;
   font-weight: 300;
 }
 
-.searchBg{
-/*   background: #cd5c5c; */
-  background: #008080de;
+input[type='search']:focus {
+  background-color: #f9be71;
+  color: black;
+}
+
+.searchBg {
+  background-color: #008080de;
   padding: 10px 10px;
   border-radius: 10px;
   transition: all 200ms linear;
+}
+
+.searchBg input[type='search'] {
+  background-color: #008080de;
+  color: white;
+}
+
+.searchBg input[type='search']::placeholder {
+  color: #ffffff;
+}
+
+.searchBg input[type='search']:focus {
+  background-color: #f9be71;
+  color: white;
 }

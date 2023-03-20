@@ -17,25 +17,25 @@
   border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
-  background: #b3b3b3;
+  background: #454545;
+  color: #ffffff;
   transition: all 120ms linear;
 }
 
 .topic-tag:hover{
   background: #ffffff;
+  color: #454545;
 }
 
 .active-topic{
   background-color: #30d46f;
+  color: #ffffff;
 }
 
 .active-topic:hover{
   background-color: #1cba59;
+  color: #ffffff;
 }
-
-/* .topic-tag:active{
-  background: #30d46f;
-} */
 
 .welcome-text{
   width: 90vw;

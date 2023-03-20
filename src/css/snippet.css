@@ -1,5 +1,4 @@
-
-.snippet-container{
+.snippet-container {
   width: 100%;
   margin: 15px auto;
   padding: 10px 15px;
@@ -11,80 +10,105 @@
   background-color: #0a0a0a;
 }
 
-.snippet-title{
+.snippet-title {
   color: #00ced1;
+  font-size: 28px;
+  margin: 0 0 10px;
 }
 
-.snippet-contributor{
-  color: grey;
+.snippet-contributor {
+  color: #999;
+  font-size: 16px;
+  margin: 0 0 20px;
 }
 
-.snippet-contributor a{
+.snippet-contributor a {
   text-decoration: none;
   color: inherit;
   transition: 120ms linear;
 }
 
-.snippet-contributor a:hover{
-  color: #999999;
+.snippet-contributor a:hover {
+  color: #ccc;
 }
 
-.snippet-decrp{
-  margin-top: 20px;
+.snippet-description {
+  margin: 20px 0;
   color: #d0d0d0;
-  font-size: 20px;
+  font-size: 18px;
 }
 
-.line{
+.snippet-line {
   height: 1.4px;
-  background-color: grey;
+  background-color: #333;
   width: 100%;
-  margin: 10px auto 15px auto;
+  margin: 20px 0;
 }
 
-.complexity{
-  margin: 5px 0;
+.complexity {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #ccc;
 }
 
-.code-snippet{
+.code-snippet {
   background: #303030;
   border-radius: 10px;
-  margin: 15px 0;
-  padding: 10px;
+  margin: 20px 0;
+  padding: 20px;
   overflow: auto;
   color: #ffefd5;
-/*   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
 }
 
-.btn-container{
+.btn-container {
   display: flex;
-  
-}
-
-.snippets-btn{
-  background-color: grey;
-  outline:none;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 0;
-  width: 20%;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-item: center;
   justify-content: center;
-  margin: auto;
-
-  transition: all 140ms linear;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0;
 }
 
-.language-btn{
+.snippets-btn {
+  background-color: #777;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 140ms linear;
+  outline: none;
+  border: none;
+  font-size: 16px;
+}
+
+.language-btn {
   background-color: #26557c;
   color: white;
   font-weight: 600;
 }
 
-.snippets-btn:hover{
+.snippets-btn:hover {
   background-color: #a3a3a3;
   color: black;
 }
+
+.copy-btn {
+  background-color: #2ecc71;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 140ms linear;
+  outline: none;
+  border: none;
+  font-size: 16px;
+}
+
+.copy-btn:hover {
+  background-color: #27ae60;
+}
+
+
