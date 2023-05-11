@@ -1,0 +1,63 @@
+nav{
+    width: 250px;
+    background-color: rgb(32, 32, 32);
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    color: rgb(229, 229, 229);
+}
+
+nav .logoContainer{
+    text-align: center;
+    font-size: 2.3rem;
+    padding: 10px;
+}
+
+nav .navLinkContainer{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    padding: 10px 30px;
+    margin-top: 10px;
+    
+}
+
+
+nav .navLinkContainer .navLink{
+    display: flex;
+    margin: 5px;
+    /* background-color: rgb(255, 255, 255); */
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(213, 213, 213);
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 200ms linear;
+}
+
+nav .navLinkContainer .navLink:hover{
+   background-color: rgb(85, 85, 85);
+}
+
+nav .navLinkContainer .snippetContainer{
+    padding: 5px 15px;
+    background-color: #404040;
+    border-radius: 5px;
+}
+
+nav .navLinkContainer .snippetContainer .snippetBox{
+    margin: 5px 0;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 200ms linear;
+    color: rgb(156, 156, 156);
+}
+
+nav .navLinkContainer .snippetContainer .snippetBox:hover{
+    color: #03b5e8;
+    /* background-color: black; */
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/topics.css";
 import Search from "./Search";
-import Code from "./Code";
+import Code from "./SnippetList";
 
 export default function Topics() {
   const [selectedTopic, setSelectedTopic] = useState("");
@@ -12,7 +12,7 @@ export default function Topics() {
 
   const renderTopicButton = (topic) => {
     const isActive = selectedTopic === topic;
-    const className = `topic-tag ${isActive ? "active-topic" : ""}`;
+    const className = `snippetBox topic-tag ${isActive ? "snippetBox active-topic" : ""}`;
 
     return (
       <button

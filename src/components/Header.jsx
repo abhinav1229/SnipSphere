@@ -6,7 +6,7 @@ export default function Header() {
     <header className="header-bg">
       <nav className="navbar">
         <div className="logo">
-          <h1>Code Snippet</h1>
+          <h1>Code Snippet</h1> 
         </div>
         <div className="navbar-items">
           <ul>

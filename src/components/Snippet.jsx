@@ -27,11 +27,7 @@ export default function Snippet(props) {
     <div className="snippet-container">
       <h2 className="snippet-title">{props.details.title}</h2>
       <p className="snippet-contributor">
-        <a
-          href={props.details.contributorId}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={props.details.contributorId} target="_blank" rel="noreferrer">
           {props.details.contributor}
         </a>
       </p>
@@ -42,19 +38,19 @@ export default function Snippet(props) {
       <div className="btn-container">
         <button
           className="snippets-btn language-btn"
-          onClick={() => handleLanguageChange('cpp')}
+          onClick={() => handleLanguageChange("cpp")}
         >
           C++
         </button>
         <button
           className="snippets-btn language-btn"
-          onClick={() => handleLanguageChange('java')}
+          onClick={() => handleLanguageChange("java")}
         >
           Java
         </button>
         <button
           className="snippets-btn language-btn"
-          onClick={() => handleLanguageChange('python')}
+          onClick={() => handleLanguageChange("python")}
         >
           Python
         </button>

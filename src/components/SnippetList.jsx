@@ -3,7 +3,7 @@ import Snippet from "./Snippet.jsx";
 import data from "../helper/data.json";
 import "../css/code.css";
 
-export default function Code(props) {
+export default function SnippetList(props) {
   const { topic } = props;
   const snippets = data[topic];
 
