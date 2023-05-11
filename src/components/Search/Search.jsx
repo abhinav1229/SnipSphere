@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "../css/search.css";
-import Snippet from "./Snippet.jsx";
-import data from "../helper/data.json";
+import "./search.css";
+import Snippet from "../Snippet/Snippet.jsx";
+import data from "../../helper/data.json";
 
 export default function Search(props) {
   // State variables
@@ -20,7 +20,14 @@ export default function Search(props) {
       setIsSnippetFound(false);
       setMatchingSnippet(null);
     } else {
-      let allTopics = ["array", "linkedlist", "tree", "stack", "queue", "graph"];
+      let allTopics = [
+        "array",
+        "linkedlist",
+        "tree",
+        "stack",
+        "queue",
+        "graph",
+      ];
       let currentTopic = props.topic.length > 0 ? props.topic : allTopics[0];
 
       // If topic is selected, give it higher priority for search
@@ -53,10 +60,21 @@ export default function Search(props) {
   }, [searchText, props.topic]);
 
   return (
-    <div className={isSnippetFound ? "search-container searchBg" : "search-container"}>
-      <input type="search" id="search" placeholder="Search a snippet" onChange={handleSearchInputChange} />
+    <div
+      className={
+        isSnippetFound ? "search-container searchBg" : "search-container"
+      }
+    >
+      <input
+        type="search"
+        id="search"
+        placeholder="Search a snippet"
+        onChange={handleSearchInputChange}
+      />
 
-      {isSnippetFound && matchingSnippet ? <Snippet details={matchingSnippet} /> : null}
+      {isSnippetFound && matchingSnippet ? (
+        <Snippet details={matchingSnippet} />
+      ) : null}
     </div>
   );
 }

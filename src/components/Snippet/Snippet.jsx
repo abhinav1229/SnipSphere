@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/snippet.css";
+import "./snippet.css";
 
 export default function Snippet(props) {
   const [copyText, setCopyText] = useState("Copy!");

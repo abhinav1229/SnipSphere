@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
-import Search from "../../components/Search";
-import SnippetList from "../../components/SnippetList";
+import Search from "../../components/Search/Search";
+import SnippetList from "../../components/SnippetList/SnippetList";
 
 function Home({ parentTopic }) {
   return (
