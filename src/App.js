@@ -11,13 +11,17 @@ import AddSnippet from "./components/AddSnippet/AddSnippet.jsx";
 
 export default function App() {
   const [parentTopic, setParentTopic] = useState("array");
+  const [reloadNavbar, setReloadNavbar] = useState(false);
 
   return (
     <Router>
       <Navbar setParentTopic={setParentTopic} />
       <Routes>
         <Route path="/" element={<Home parentTopic={parentTopic} />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login setReloadNavbar={setReloadNavbar} />}
+        />
         <Route path="/logout" element={<Logout />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile/:id" element={<Profile />} />

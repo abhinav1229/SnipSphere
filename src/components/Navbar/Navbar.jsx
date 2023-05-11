@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
-import SnippetList from "../SnippetList/SnippetList.jsx";
 import TopicList from "../TopicList/TopicList";
 
 function Navbar({ setParentTopic }) {
@@ -9,6 +8,10 @@ function Navbar({ setParentTopic }) {
   const openAllSnippets = () => {
     setShowSnippets(!showSnippets);
   };
+
+  let localData = JSON.parse(localStorage.getItem("userInfoSnipSphere"));
+
+  // console.log(localData);
 
   return (
     <>
@@ -32,9 +35,22 @@ function Navbar({ setParentTopic }) {
               </div>
             )}
           </div>
-          <NavLink className="navLink" to={"/login"}>
-            Login
-          </NavLink>
+          {localData ? (
+            <NavLink
+              className="navLink"
+              to={"/login"}
+              onClick={() => {
+                localStorage.setItem("userInfoSnipSphere", null);
+                setReloadNavbar(true);
+              }}
+            >
+              Logout
+            </NavLink>
+          ) : (
+            <NavLink className="navLink" to={"/login"}>
+              Login
+            </NavLink>
+          )}
         </div>
       </nav>
     </>

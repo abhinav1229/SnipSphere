@@ -62,3 +62,21 @@
 .FormContainer form .formGroup button:hover {
   background-color: rgb(0, 110, 255);
 }
+
+.FormContainer form .formGroup .langugeBoxContainer {
+  display: flex;
+}
+
+.FormContainer form .formGroup .langugeBoxContainer .languageBox {
+  /* background-color: grey; */
+  margin: 0px 5px;
+  font-size: 1.1rem;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+}
+
+.FormContainer form .formGroup .langugeBoxContainer .selectedLanguage {
+  background-color: rgba(2, 136, 177, 0.726);
+}
