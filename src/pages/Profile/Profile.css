@@ -1,0 +1,24 @@
+.Profile {
+  margin-left: 250px;
+}
+
+.Profile .userInfoContainer {
+  padding-top: 30px;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.Profile .userInfoContainer a {
+  margin-top: 12px;
+}
+.Profile .userInfoContainer a img {
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+}

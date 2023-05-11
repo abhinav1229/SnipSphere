@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./snippet.css";
+import axios from "axios";
+import { BASE_URL } from "../../helper/ref";
+import { NavLink } from "react-router-dom";
 
 export default function Snippet(props) {
   const [copyText, setCopyText] = useState("Copy!");
-  const [langauge, setLangauge] = useState("");
+  const [language, setLanguage] = useState("");
   const [currentTopic, setCurrentTopic] = useState("");
+  const [contributor, setContributor] = useState("");
 
   if (currentTopic !== props.topic) {
-    setLangauge("cpp");
+    setLanguage("cpp");
     setCurrentTopic(props.topic);
   }
 
-  let code = props.details.snippet.cpp;
+  console.log(props.details.codeobj);
+  let code = props.details.codeobj.cpp;
 
   const handleLanguageChange = (newLanguage) => {
-    setLangauge(newLanguage);
+    setLanguage(newLanguage);
     setCopyText("Copy!");
   };
 
@@ -23,17 +28,30 @@ export default function Snippet(props) {
     setCopyText("Copied!");
   };
 
+  // getting the userprofile
+  useEffect(() => {
+    async function fecthContributor() {
+      let userDetail = await axios.get(`${BASE_URL}/user/userInfoById`, {
+        params: {
+          userId: props.details.userId,
+        },
+      });
+      setContributor(userDetail.data[0].fullName);
+    }
+    fecthContributor();
+  }, []);
+
   return (
     <div className="snippet-container">
       <h2 className="snippet-title">{props.details.title}</h2>
       <p className="snippet-contributor">
-        <a href={props.details.contributorId} target="_blank" rel="noreferrer">
-          {props.details.contributor}
-        </a>
+        <NavLink to={`/profile/${props.details.userId}`} rel="noreferrer">
+          {contributor}
+        </NavLink>
       </p>
       <p className="snippet-description">{props.details.description}</p>
       <pre className="code-snippet">
-        {langauge ? props.details.snippet[langauge] : code}
+        {language ? props.details.codeobj[language] : code}
       </pre>
       <div className="btn-container">
         <button

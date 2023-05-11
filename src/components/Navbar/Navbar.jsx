@@ -22,6 +22,14 @@ function Navbar({ setParentTopic }) {
           </NavLink>
         </div>
         <div className="navLinkContainer">
+          {localData && (
+            <NavLink
+              className="navLink userLink"
+              to={`/profile/${localData._id}`}
+            >
+              Hi, {localData.fullName}
+            </NavLink>
+          )}
           <NavLink className="navLink" to={"/new"}>
             Add New
           </NavLink>
