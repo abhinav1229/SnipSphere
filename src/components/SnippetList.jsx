@@ -6,14 +6,15 @@ import "../css/code.css";
 export default function SnippetList(props) {
   const { topic } = props;
   const snippets = data[topic];
-
+  console.log(snippets);
   return (
     <div className="code-container">
-      {snippets.map((snippet, index) => (
-        <div className="snippet-container" key={index}>
-          <Snippet topic={topic} details={snippet} />
-        </div>
-      ))}
+      {snippets &&
+        snippets.map((snippet, index) => (
+          <div className="snippet-container" key={index}>
+            <Snippet topic={topic} details={snippet} />
+          </div>
+        ))}
     </div>
   );
 }

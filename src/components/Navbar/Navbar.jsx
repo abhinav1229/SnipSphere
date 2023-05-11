@@ -1,14 +1,18 @@
 import React, {useState} from 'react'
 import "./Navbar.css"
 import { NavLink } from 'react-router-dom';
+import SnippetList from '../SnippetList.jsx';
+import "../../css/code.css";
+import TopicList from '../TopicList/TopicList';
 
-function Navbar() {
+
+function Navbar({setParentTopic}) {
     const [showSnippets, setShowSnippets] = useState(false);
     const openAllSnippets = () => {
         setShowSnippets(!showSnippets);
     }
 
-
+    
   return (
     <>
         <nav>
@@ -22,15 +26,15 @@ function Navbar() {
                 <NavLink className="navLink" onClick={openAllSnippets}>Snippets</NavLink>
                     {
                         showSnippets && <div className="snippetContainer">
-                        <div className="snippetBox">Array</div>
-                        <div className="snippetBox">LinkedList</div>
-                        <div className="snippetBox">Tree</div>
+                        <TopicList setParentTopic={setParentTopic}/>
                     </div>
                     }
+                    
                 </div>
                 <NavLink className="navLink" to={"/login"}>Login</NavLink>
             </div>
         </nav>
+        
     </>
   )
 }

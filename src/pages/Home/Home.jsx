@@ -1,13 +1,17 @@
-import React from 'react'
-import SnippetList from '../../components/SnippetList'
-import Topics from '../../components/Topics'
+import React from "react";
+import "./Home.css";
+import Search from "../../components/Search";
+import SnippetList from "../../components/SnippetList";
 
-function Home() {
+function Home({ parentTopic }) {
   return (
     <>
-      <Topics/>
+      <div className="Home">
+        <Search topic={parentTopic} />
+        <SnippetList topic={parentTopic} />
+      </div>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

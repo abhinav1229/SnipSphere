@@ -12,7 +12,7 @@ export default function Topics() {
 
   const renderTopicButton = (topic) => {
     const isActive = selectedTopic === topic;
-    const className = `snippetBox topic-tag ${isActive ? "snippetBox active-topic" : ""}`;
+    const className = `snippetBox topic-tag ${isActive ? "snippetBoxactive-topic" : ""}`;
 
     return (
       <button
