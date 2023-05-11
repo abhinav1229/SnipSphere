@@ -1,0 +1,71 @@
+.FormContainer {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  display: flex;
+  justify-content: center;
+}
+
+.FormContainer form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: white; */
+  color: grey;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.FormContainer form .formGroup {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 10px 0;
+}
+
+.FormContainer form .formGroup label {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.FormContainer form .formGroup input,
+.FormContainer form .formGroup textarea,
+.FormContainer form .formGroup button,
+.FormContainer form .formGroup select {
+  font-size: 1.3rem;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  background-color: rgba(59, 59, 59, 0.87);
+  border-radius: 5px;
+  color: white;
+  transition: all 200ms linear;
+}
+
+.FormContainer form .formGroup input:focus,
+.FormContainer form .formGroup textarea:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.774);
+}
+
+.FormContainer form .formGroup input::placeholder {
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.FormContainer form .formGroup button,
+.FormContainer form .formGroup a button {
+  background-color: rgb(0, 140, 255);
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.FormContainer form .formGroup button:hover {
+  background-color: rgb(0, 110, 255);
+}
+
+.FormContainer form .formGroup button.loginButton {
+  background-color: rgb(0, 45, 75);
+  color: white;
+}

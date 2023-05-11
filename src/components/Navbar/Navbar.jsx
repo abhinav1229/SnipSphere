@@ -19,7 +19,7 @@ function Navbar({ setParentTopic }) {
           </NavLink>
         </div>
         <div className="navLinkContainer">
-          <NavLink className="navLink" to={"/newsnippet"}>
+          <NavLink className="navLink" to={"/new"}>
             Add New
           </NavLink>
           <div>
