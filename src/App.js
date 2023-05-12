@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import { useState } from "react";
 import AddSnippet from "./components/AddSnippet/AddSnippet.jsx";
+import SnippetUpdate from "./pages/SnippetUpdate/SnippetUpdate.jsx";
 
 export default function App() {
   const [parentTopic, setParentTopic] = useState("array");
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/update/:id" element={<SnippetUpdate />} />
         <Route path="/new" element={<AddSnippet />} />
       </Routes>
     </Router>

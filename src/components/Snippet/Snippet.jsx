@@ -3,6 +3,7 @@ import "./snippet.css";
 import axios from "axios";
 import { BASE_URL } from "../../helper/ref";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Snippet(props) {
   const [copyText, setCopyText] = useState("Copy!");
@@ -10,6 +11,8 @@ export default function Snippet(props) {
   const [currentTopic, setCurrentTopic] = useState("");
   const [contributor, setContributor] = useState("");
   const [deleted, setDeleted] = useState(false);
+
+  const navigate = useNavigate();
 
   if (currentTopic !== props.topic) {
     setLanguage("cpp");
@@ -53,6 +56,10 @@ export default function Snippet(props) {
     } else {
       // do nothing
     }
+  }
+
+  function editSnippet(id) {
+    navigate(`/update/${id}`);
   }
 
   return (
@@ -103,9 +110,14 @@ export default function Snippet(props) {
       <p className="complexity snippet-space">
         Space Complexity: <b>{props.details.spaceComplexity}</b>
       </p>
-      {localData && localData._id === props.details.userId && (
+      {localData && localData._id === props.details.userId && !deleted && (
         <div className="editButtonContainer">
-          <button className="edit">Edit</button>
+          <button
+            className="edit"
+            onClick={() => editSnippet(props.details._id)}
+          >
+            Edit
+          </button>
           <button
             className="delete"
             onClick={() => deleteSnippet(props.details._id)}
