@@ -49,6 +49,7 @@ function TopicList({ setParentTopic, setShowSnippets }) {
               setParentTopic(topic.tag);
               setShowSnippets(false);
             }}
+            key={index}
           >
             {topic.name}
           </div>

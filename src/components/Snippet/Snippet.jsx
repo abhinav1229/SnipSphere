@@ -9,6 +9,7 @@ export default function Snippet(props) {
   const [language, setLanguage] = useState("");
   const [currentTopic, setCurrentTopic] = useState("");
   const [contributor, setContributor] = useState("");
+  const [deleted, setDeleted] = useState(false);
 
   if (currentTopic !== props.topic) {
     setLanguage("cpp");
@@ -16,6 +17,7 @@ export default function Snippet(props) {
   }
 
   let code = props.details.codeobj.cpp;
+  let localData = JSON.parse(localStorage.getItem("userInfoSnipSphere"));
 
   const handleLanguageChange = (newLanguage) => {
     setLanguage(newLanguage);
@@ -40,8 +42,26 @@ export default function Snippet(props) {
     fecthContributor();
   }, []);
 
+  async function deleteSnippet(id) {
+    if (window.confirm("Are you sure want to delete snippet?") === true) {
+      let response = await axios.delete(`${BASE_URL}/snippets/delete`, {
+        params: {
+          id,
+        },
+      });
+      setDeleted(true);
+    } else {
+      // do nothing
+    }
+  }
+
   return (
     <div className="snippet-container">
+      {deleted && (
+        <p style={{ color: "yellowgreen", fontSize: "1.2rem" }}>
+          Successfully Deleted! Please refresh the page to see the changes.
+        </p>
+      )}
       <h2 className="snippet-title">{props.details.title}</h2>
       <p className="snippet-contributor">
         <NavLink to={`/profile/${props.details.userId}`} rel="noreferrer">
@@ -83,6 +103,17 @@ export default function Snippet(props) {
       <p className="complexity snippet-space">
         Space Complexity: <b>{props.details.spaceComplexity}</b>
       </p>
+      {localData && localData._id === props.details.userId && (
+        <div className="editButtonContainer">
+          <button className="edit">Edit</button>
+          <button
+            className="delete"
+            onClick={() => deleteSnippet(props.details._id)}
+          >
+            Delete
+          </button>
+        </div>
+      )}
     </div>
   );
 }

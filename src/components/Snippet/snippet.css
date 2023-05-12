@@ -111,4 +111,22 @@
   background-color: #27ae60;
 }
 
+.editButtonContainer button {
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+}
 
+.editButtonContainer button.edit {
+  background-color: #27ae5fd3;
+}
+
+.editButtonContainer button.delete {
+  background-color: rgba(255, 109, 55, 0.911);
+}
