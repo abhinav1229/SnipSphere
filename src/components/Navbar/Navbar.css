@@ -86,3 +86,15 @@ nav .navLinkContainer .snippetContainer .snippetBox:hover {
   color: #03b5e8;
   /* background-color: black; */
 }
+
+@media screen and (max-width: 815px) {
+  nav {
+    left: -250px;
+  }
+}
+
+/* @media screen and (min-width: 720px) {
+  nav {
+    left: 0px;
+  }
+} */

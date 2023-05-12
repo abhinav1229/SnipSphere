@@ -20,7 +20,7 @@
 .FormContainer form .formGroup {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
   margin: 10px 0;
 }
 
@@ -79,4 +79,21 @@
 
 .FormContainer form .formGroup .langugeBoxContainer .selectedLanguage {
   background-color: rgba(2, 136, 177, 0.726);
+}
+
+@media screen and (max-width: 815px) {
+  .FormContainer {
+    margin-left: 0;
+    width: 100vw;
+  }
+
+  .FormContainer form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .FormContainer form {
+    width: 90%;
+  }
 }

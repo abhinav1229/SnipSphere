@@ -1,4 +1,10 @@
-.Home{
-    margin-left: 250px;
-    padding: 20px;
+.Home {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 815px) {
+  .Home {
+    margin-left: 0;
+  }
 }

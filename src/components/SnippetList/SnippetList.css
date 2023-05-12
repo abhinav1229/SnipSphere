@@ -1,5 +1,5 @@
 .code-container {
-  width: 90vw;
+  width: 90%;
   margin: 20px auto;
   overflow: auto;
   display: flex;
@@ -14,19 +14,19 @@
 
 @media screen and (min-width: 720px) {
   .code-container {
-    width: 80vw;
+    width: 80%;
   }
 }
 
 @media screen and (min-width: 990px) {
   .code-container {
-    width: 70vw;
+    width: 70%;
   }
 }
 
 @media screen and (min-width: 1150px) {
   .code-container {
-    width: 60vw;
+    width: 60%;
   }
 
   .loadingContainer {
