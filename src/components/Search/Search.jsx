@@ -81,12 +81,14 @@ export default function Search(props) {
           : "search-container"
       }
     >
-      <input
-        type="search"
-        id="search"
-        placeholder="Search a snippet"
-        onChange={handleSearchInputChange}
-      />
+      <div className="searchAndBurgerContainer">
+        <input
+          type="search"
+          id="search"
+          placeholder="Search a snippet"
+          onChange={handleSearchInputChange}
+        />
+      </div>
 
       {searchText && isSnippetFound && matchingSnippet ? (
         <Snippet details={matchingSnippet} />

@@ -6,22 +6,44 @@ import Signup from "./pages/Signup/Signup.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.jsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddSnippet from "./components/AddSnippet/AddSnippet.jsx";
 import SnippetUpdate from "./pages/SnippetUpdate/SnippetUpdate.jsx";
 
 export default function App() {
   const [parentTopic, setParentTopic] = useState("array");
   const [reloadNavbar, setReloadNavbar] = useState(false);
+  const [showNav, setShowNav] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    console.log(width);
+    setWidth(window.innerWidth);
+    if (window.innerWidth >= 815) {
+      setShowNav(true);
+    } else {
+      setShowNav(false);
+    }
+  }, [width, window.innerWidth]);
 
   return (
     <Router>
-      <Navbar setParentTopic={setParentTopic} />
+      <Navbar
+        setParentTopic={setParentTopic}
+        showNav={showNav}
+        setShowNav={setShowNav}
+      />
       <Routes>
         <Route path="/" element={<Home parentTopic={parentTopic} />} />
         <Route
           path="/login"
-          element={<Login setReloadNavbar={setReloadNavbar} />}
+          element={
+            <Login
+              setReloadNavbar={setReloadNavbar}
+              setShowNav={setShowNav}
+              showNav={showNav}
+            />
+          }
         />
         <Route path="/logout" element={<Logout />} />
         <Route path="/signup" element={<Signup />} />

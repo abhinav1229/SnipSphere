@@ -80,6 +80,11 @@
 .FormContainer form .formGroup .langugeBoxContainer .selectedLanguage {
   background-color: rgba(2, 136, 177, 0.726);
 }
+/* @media screen and (max-width: 450px) {
+  .FormContainer form .formGroup {
+    width: 90%;
+  }
+} */
 
 @media screen and (max-width: 815px) {
   .FormContainer {
@@ -89,6 +94,10 @@
 
   .FormContainer form {
     width: 100%;
+  }
+
+  .FormContainer form .formGroup {
+    width: 85%;
   }
 }
 

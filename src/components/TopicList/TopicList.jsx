@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-function TopicList({ setParentTopic, setShowSnippets }) {
+function TopicList({
+  setParentTopic,
+  setShowSnippets,
+  width,
+  navOpen,
+  setNavOpen,
+}) {
   let allTopics = [
     {
       tag: "array",
@@ -48,6 +54,7 @@ function TopicList({ setParentTopic, setShowSnippets }) {
             onClick={() => {
               setParentTopic(topic.tag);
               setShowSnippets(false);
+              setNavOpen(width >= 815 && navOpen ? true : false);
             }}
             key={index}
           >

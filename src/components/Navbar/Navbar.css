@@ -8,6 +8,7 @@ nav {
   display: flex;
   flex-direction: column;
   color: rgb(229, 229, 229);
+  transition: all 200ms linear;
 }
 
 nav .logoContainer {
@@ -85,6 +86,26 @@ nav .navLinkContainer .snippetContainer .snippetBox {
 nav .navLinkContainer .snippetContainer .snippetBox:hover {
   color: #03b5e8;
   /* background-color: black; */
+}
+
+nav .hamberger {
+  background-color: rgb(250, 250, 250);
+  width: 40px;
+  padding: 10px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 10px 10px 0;
+  position: absolute;
+  left: 250px;
+  top: 7px;
+  cursor: pointer;
+}
+
+nav .hamberger img {
+  height: 30px;
+  width: 30px;
 }
 
 @media screen and (max-width: 815px) {
