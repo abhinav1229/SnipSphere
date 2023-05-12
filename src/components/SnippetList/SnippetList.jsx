@@ -30,13 +30,13 @@ export default function SnippetList(props) {
       style={
         loading
           ? {
-              height: "90vh",
+              height: "70vh",
               alignItems: "center",
               justifyContent: "center",
             }
           : snippets.length == 0
           ? {
-              height: "90vh",
+              height: "70vh",
               alignItems: "center",
               justifyContent: "center",
             }
