@@ -103,7 +103,7 @@ export default function Snippet(props) {
         </button>
       </div>
 
-      <hr className="snippet-line" />
+      <div className="snippet-line"></div>
       <p className="complexity snippet-time">
         Time Complexity: <b>{props.details.timeComplexity}</b>
       </p>

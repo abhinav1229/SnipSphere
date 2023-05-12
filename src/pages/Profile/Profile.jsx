@@ -54,11 +54,7 @@ function Profile() {
       <div className="code-container">
         {allSnippets &&
           allSnippets.map((snippet, index) => {
-            return (
-              <div className="snippet-container" key={index}>
-                <Snippet topic={"array"} details={snippet} />
-              </div>
-            );
+            return <Snippet topic={"array"} details={snippet} key={index} />;
           })}
       </div>
     </div>

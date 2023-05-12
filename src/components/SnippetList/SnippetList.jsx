@@ -47,11 +47,7 @@ export default function SnippetList(props) {
         <ReactLoading type={"spin"} color={"grey"} height={50} width={50} />
       ) : snippets.length ? (
         snippets.map((snippet, index) => {
-          return (
-            <div className="snippet-container" key={index}>
-              <Snippet topic={topic} details={snippet} />
-            </div>
-          );
+          return <Snippet topic={topic} details={snippet} key={index} />;
         })
       ) : (
         <div className="noSnippetMessage">
