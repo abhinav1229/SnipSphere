@@ -1,7 +1,7 @@
 .snippet-container {
   width: 100%;
-  margin: 15px auto;
-  padding: 10px 15px;
+  margin: 10px auto;
+  padding: 5px 15px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -73,7 +73,7 @@
   color: white;
   font-weight: 600;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 7px 15px;
   margin: 5px;
   cursor: pointer;
   transition: all 140ms linear;
@@ -98,7 +98,7 @@
   color: white;
   font-weight: 600;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 7px 15px;
   margin: 5px;
   cursor: pointer;
   transition: all 140ms linear;
