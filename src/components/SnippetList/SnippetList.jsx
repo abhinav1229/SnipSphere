@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Snippet from "../Snippet/Snippet.jsx";
-import data from "../../helper/data.json";
 import "./SnippetList.css";
 import { BASE_URL } from "../../helper/ref.js";
 import axios from "axios";
+import ReactLoading from "react-loading";
 
 export default function SnippetList(props) {
   const { topic } = props;
   const [snippets, setSnippets] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     async function fetchData() {
       let response = await axios.get(`${BASE_URL}/snippets/all`, {
         params: {
@@ -17,18 +19,46 @@ export default function SnippetList(props) {
         },
       });
       setSnippets(response.data);
+      setLoading(false);
     }
 
     fetchData();
   }, [topic]);
   return (
-    <div className="code-container">
-      {snippets &&
-        snippets.map((snippet, index) => (
-          <div className="snippet-container" key={index}>
-            <Snippet topic={topic} details={snippet} />
-          </div>
-        ))}
+    <div
+      className={`code-container`}
+      style={
+        loading
+          ? {
+              height: "90vh",
+              alignItems: "center",
+              justifyContent: "center",
+            }
+          : snippets.length == 0
+          ? {
+              height: "90vh",
+              alignItems: "center",
+              justifyContent: "center",
+            }
+          : {}
+      }
+    >
+      {loading ? (
+        <ReactLoading type={"spin"} color={"grey"} height={50} width={50} />
+      ) : snippets.length ? (
+        snippets.map((snippet, index) => {
+          return (
+            <div className="snippet-container" key={index}>
+              <Snippet topic={topic} details={snippet} />
+            </div>
+          );
+        })
+      ) : (
+        <div className="noSnippetMessage">
+          Sorry! We didn't found any snippets of{" "}
+          <span style={{ color: "coral" }}>{topic}</span>.
+        </div>
+      )}
     </div>
   );
 }

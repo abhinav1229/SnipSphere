@@ -20,7 +20,6 @@ function Profile() {
           id,
         },
       });
-      console.log(response.data);
       setAllSnippets(response.data);
     }
     async function fecthContributor() {
@@ -38,16 +37,18 @@ function Profile() {
   return (
     <div className="Profile">
       <div className="userInfoContainer">
-        <div className="fullName">{fullName}</div>
+        <div className="fullName">Hi there 👋, I'm {fullName} 💻 </div>
+
         {/* <div className="iconContainer"> */}
         <NavLink to={`https://github.com/${gitHub}`} target="_blank">
           <img
-            width="40"
-            height="40"
+            width="50"
+            height="50"
             src="https://img.icons8.com/ios-filled/50/FFFFFF/github.png"
             alt="github"
           />
         </NavLink>
+        <div className="line"></div>
         {/* </div> */}
       </div>
       <div className="code-container">

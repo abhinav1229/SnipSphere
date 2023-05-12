@@ -1,32 +1,59 @@
 import React, { useState } from "react";
 
-function TopicList({ setParentTopic }) {
+function TopicList({ setParentTopic, setShowSnippets }) {
+  let allTopics = [
+    {
+      tag: "array",
+      name: "Array",
+    },
+    {
+      tag: "string",
+      name: "String",
+    },
+    {
+      tag: "linkedlist",
+      name: "Linked List",
+    },
+    {
+      tag: "tree",
+      name: "Tree",
+    },
+    {
+      tag: "stack",
+      name: "Stack",
+    },
+    {
+      tag: "queue",
+      name: "Queue",
+    },
+    {
+      tag: "number",
+      name: "Number",
+    },
+    {
+      tag: "graph",
+      name: "Graph",
+    },
+    {
+      tag: "bitmanip",
+      name: "Bit Manipulation",
+    },
+  ];
   return (
     <>
-      <div className="snippetBox" onClick={() => setParentTopic("array")}>
-        Array
-      </div>
-      <div className="snippetBox" onClick={() => setParentTopic("linkedlist")}>
-        LinkedList
-      </div>
-      <div className="snippetBox" onClick={() => setParentTopic("tree")}>
-        Tree
-      </div>
-      <div className="snippetBox" onClick={() => setParentTopic("queue")}>
-        Queue
-      </div>
-      <div className="snippetBox" onClick={() => setParentTopic("stack")}>
-        Stack
-      </div>
-      <div className="snippetBox" onClick={() => setParentTopic("graph")}>
-        Graph
-      </div>
-      <div className="snippetBox" onClick={() => setParentTopic("number")}>
-        Number
-      </div>
-      <div className="snippetBox" onClick={() => setParentTopic("bitmanip")}>
-        Bit Manipulation
-      </div>
+      {allTopics.map((topic, index) => {
+        return (
+          <div
+            className="snippetBox"
+            onClick={() => {
+              setParentTopic(topic.tag);
+              setShowSnippets(false);
+            }}
+          >
+            {topic.name}
+          </div>
+        );
+      })}
     </>
   );
 }

@@ -32,12 +32,12 @@
   }
 }
 
-input[type='search'] {
+input[type="search"] {
   font-size: 20px;
   outline: none;
   width: 90%;
   border: none;
-  background-color: #008080de;
+  background-color: #afafafde;
   border-radius: 7px;
   font-weight: 600;
   padding: 10px 10px;
@@ -48,13 +48,13 @@ input[type='search'] {
   transition: all 150ms linear;
 }
 
-input[type='search']::placeholder {
+input[type="search"]::placeholder {
   color: #000000;
   font-weight: 400;
 }
 
-input[type='search']:focus {
-  background-color: #008080de;
+input[type="search"]:focus {
+  background-color: #cfcecede;
   color: black;
 }
 
@@ -65,16 +65,12 @@ input[type='search']:focus {
   transition: all 200ms linear;
 }
 
-.searchBg input[type='search'] {
+.searchBg input[type="search"] {
   background-color: #008080de;
   /* color: white; */
 }
 
-.searchBg input[type='search']::placeholder {
-  /* color: #ffffff; */
-}
-
-.searchBg input[type='search']:focus {
+.searchBg input[type="search"]:focus {
   /* background-color: #f9be71; */
   color: white;
 }

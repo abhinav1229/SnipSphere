@@ -27,7 +27,13 @@ function Navbar({ setParentTopic }) {
               className="navLink userLink"
               to={`/profile/${localData._id}`}
             >
-              Hi, {localData.fullName}
+              <img
+                width="30"
+                height="30"
+                src="https://img.icons8.com/color/48/user.png"
+                alt="user"
+              />{" "}
+              <span>Hi, {localData.fullName}</span>
             </NavLink>
           )}
           <NavLink className="navLink" to={"/new"}>
@@ -39,7 +45,10 @@ function Navbar({ setParentTopic }) {
             </NavLink>
             {showSnippets && (
               <div className="snippetContainer">
-                <TopicList setParentTopic={setParentTopic} />
+                <TopicList
+                  setParentTopic={setParentTopic}
+                  setShowSnippets={setShowSnippets}
+                />
               </div>
             )}
           </div>

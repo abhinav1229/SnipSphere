@@ -1,32 +1,43 @@
-.code-container{
+.code-container {
   width: 90vw;
   margin: 20px auto;
   overflow: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.noSnippetMessage {
+  color: white;
+  font-size: 1.3rem;
 }
 
 @media screen and (min-width: 720px) {
- .code-container{
-   width: 80vw;
- }
+  .code-container {
+    width: 80vw;
+  }
 }
 
 @media screen and (min-width: 990px) {
- .code-container{
-   width: 70vw;
- }
+  .code-container {
+    width: 70vw;
+  }
 }
 
-
 @media screen and (min-width: 1150px) {
- .code-container{
-   width: 60vw;
- }
+  .code-container {
+    width: 60vw;
+  }
+
+  .loadingContainer {
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media screen and (min-width: 1350px) {
- .code-container{
-   width: 50vw;
- }
+  .code-container {
+    width: 50vw;
+  }
 }

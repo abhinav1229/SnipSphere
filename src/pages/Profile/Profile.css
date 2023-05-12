@@ -7,11 +7,18 @@
   text-align: center;
   color: white;
   font-size: 2rem;
-  font-style: italic;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.Profile .userInfoContainer .line {
+  height: 1px;
+  width: 250px;
+  background-color: grey;
 }
 
 .Profile .userInfoContainer a {
