@@ -24,7 +24,6 @@ function Profile() {
         },
       });
       setAllSnippets(response.data);
-      setLoading(false);
     }
     async function fecthContributor() {
       let userDetail = await axios.get(`${BASE_URL}/user/userInfoById`, {
@@ -32,8 +31,10 @@ function Profile() {
           userId: id,
         },
       });
-      setFullName(userDetail.data[0].fullName);
+      console.log(userDetail.data);
+      setFullName(userDetail.data[0].fullName.split(" ")[0]);
       setGitHub(userDetail.data[0].gitHub);
+      setLoading(false);
     }
     fecthContributor();
     fetchSnippets();
@@ -45,7 +46,9 @@ function Profile() {
       ) : (
         <>
           <div className="userInfoContainer">
-            <div className="fullName">Hi there 👋, I'm {fullName} 💻 </div>
+            <div className="fullName">
+              Hi there 👋, I'm {fullName && fullName} 💻{" "}
+            </div>
 
             {/* <div className="iconContainer"> */}
             <NavLink to={`https://github.com/${gitHub}`} target="_blank">
