@@ -16,7 +16,6 @@ export default function SnippetList(props) {
           topic,
         },
       });
-      console.log(response.data);
       setSnippets(response.data);
     }
 

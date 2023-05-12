@@ -15,7 +15,6 @@ export default function Snippet(props) {
     setCurrentTopic(props.topic);
   }
 
-  console.log(props.details.codeobj);
   let code = props.details.codeobj.cpp;
 
   const handleLanguageChange = (newLanguage) => {

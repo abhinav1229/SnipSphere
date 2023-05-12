@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 
 function TopicList({ setParentTopic }) {
-  //   const renderWelcomeText = () => {
-  //     return (
-  //       <div className="welcome-text">
-  //         Copy the snippets and paste on your main code...
-  //       </div>
-  //     );
-  //   };
-
   return (
     <>
       <div className="snippetBox" onClick={() => setParentTopic("array")}>
@@ -19,6 +11,21 @@ function TopicList({ setParentTopic }) {
       </div>
       <div className="snippetBox" onClick={() => setParentTopic("tree")}>
         Tree
+      </div>
+      <div className="snippetBox" onClick={() => setParentTopic("queue")}>
+        Queue
+      </div>
+      <div className="snippetBox" onClick={() => setParentTopic("stack")}>
+        Stack
+      </div>
+      <div className="snippetBox" onClick={() => setParentTopic("graph")}>
+        Graph
+      </div>
+      <div className="snippetBox" onClick={() => setParentTopic("number")}>
+        Number
+      </div>
+      <div className="snippetBox" onClick={() => setParentTopic("bitmanip")}>
+        Bit Manipulation
       </div>
     </>
   );

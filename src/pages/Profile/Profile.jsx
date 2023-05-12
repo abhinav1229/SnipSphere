@@ -40,7 +40,7 @@ function Profile() {
       <div className="userInfoContainer">
         <div className="fullName">{fullName}</div>
         {/* <div className="iconContainer"> */}
-        <NavLink to={`https://github.com/${gitHub}`}>
+        <NavLink to={`https://github.com/${gitHub}`} target="_blank">
           <img
             width="40"
             height="40"

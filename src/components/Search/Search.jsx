@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./search.css";
 import Snippet from "../Snippet/Snippet.jsx";
 import data from "../../helper/data.json";
+import { BASE_URL } from "../../helper/ref";
+import axios from "axios";
 
 export default function Search(props) {
   // State variables
   const [searchText, setSearchText] = useState("");
   const [isSnippetFound, setIsSnippetFound] = useState(false);
-  const [matchingSnippet, setMatchingSnippet] = useState(null);
+  const [matchingSnippet, setMatchingSnippet] = useState({});
 
   // Event handler for search input change
   const handleSearchInputChange = (event) => {
@@ -15,54 +17,68 @@ export default function Search(props) {
   };
 
   // Listen for changes to searchText and update isSnippetFound and matchingSnippet
+
   useEffect(() => {
     if (searchText === "") {
       setIsSnippetFound(false);
       setMatchingSnippet(null);
     } else {
-      let allTopics = [
-        "array",
-        "linkedlist",
-        "tree",
-        "stack",
-        "queue",
-        "graph",
-      ];
-      let currentTopic = props.topic.length > 0 ? props.topic : allTopics[0];
+      async function fetchAllSnippets() {
+        let response = await axios.get(`${BASE_URL}/snippets/allsnippets`);
+        console.log(response.data);
+        let allTopics = [
+          "array",
+          "linkedlist",
+          "tree",
+          "stack",
+          "queue",
+          "graph",
+          "number",
+          "bitmanip",
+        ];
+        let currentTopic = props.topic.length > 0 ? props.topic : allTopics[0];
 
-      // If topic is selected, give it higher priority for search
-      if (currentTopic !== allTopics[0]) {
-        let temp = allTopics[0];
-        allTopics[allTopics.indexOf(currentTopic)] = temp;
-        allTopics[0] = currentTopic;
-      }
+        // If topic is selected, give it higher priority for search
+        if (currentTopic !== allTopics[0]) {
+          let temp = allTopics[0];
+          allTopics[allTopics.indexOf(currentTopic)] = temp;
+          allTopics[0] = currentTopic;
+        }
 
-      // Search for matching snippets in all topics
-      for (let i = 0; i < allTopics.length; i++) {
-        let topic = allTopics[i];
-        let snippets = data[topic];
+        // Search for matching snippets in all topics
+        for (let i = 0; i < allTopics.length; i++) {
+          let topic = allTopics[i];
 
-        for (let j = 0; j < snippets.length; j++) {
-          let snippet = snippets[j];
+          let snippets = response.data.filter((snippet) => {
+            return snippet.topic == topic;
+          });
 
-          // If the snippet title contains the search text, set isSnippetFound and matchingSnippet
-          if (snippet.title.toLowerCase().indexOf(searchText) !== -1) {
-            setIsSnippetFound(true);
-            setMatchingSnippet(snippet);
-            return;
+          for (let j = 0; j < snippets.length; j++) {
+            let snippet = snippets[j];
+
+            // If the  snippet title contains the search text, set isSnippetFound and matchingSnippet
+            if (snippet.title.toLowerCase().indexOf(searchText) !== -1) {
+              setIsSnippetFound(true);
+              setMatchingSnippet(snippet);
+              return;
+            }
           }
         }
+
+        // If no matching snippet was found, set isSnippetFound to false
+        setIsSnippetFound(false);
       }
 
-      // If no matching snippet was found, set isSnippetFound to false
-      setIsSnippetFound(false);
+      fetchAllSnippets();
     }
   }, [searchText, props.topic]);
 
   return (
     <div
       className={
-        isSnippetFound ? "search-container searchBg" : "search-container"
+        isSnippetFound && searchText
+          ? "search-container searchBg"
+          : "search-container"
       }
     >
       <input
@@ -72,7 +88,7 @@ export default function Search(props) {
         onChange={handleSearchInputChange}
       />
 
-      {isSnippetFound && matchingSnippet ? (
+      {searchText && isSnippetFound && matchingSnippet ? (
         <Snippet details={matchingSnippet} />
       ) : null}
     </div>
