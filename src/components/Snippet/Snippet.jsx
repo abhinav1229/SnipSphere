@@ -75,7 +75,7 @@ export default function Snippet(props) {
           {contributor}
         </NavLink>
       </p>
-      <p className="snippet-description">{props.details.description}</p>
+      <pre className="snippet-description">{props.details.description}</pre>
       <pre className="code-snippet">
         {language ? props.details.codeobj[language] : code}
       </pre>

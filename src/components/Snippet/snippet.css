@@ -37,6 +37,10 @@
   margin: 20px 0;
   color: #d0d0d0;
   font-size: 18px;
+  overflow: hidden;
+  width: 100%;
+
+  white-space: pre-wrap;
 }
 
 .snippet-line {
