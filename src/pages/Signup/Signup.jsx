@@ -35,16 +35,20 @@ function Signup() {
           gitHub,
           userPassword: password,
         });
-        setLoading(false);
+
         if (response.status === 200) {
+          setLoading(false);
           navigate("/login");
         } else {
+          setLoading(false);
           alert("Something is wrong! Please Try again");
         }
       } else {
+        setLoading(false);
         alert("This Email is already exist");
       }
     } else {
+      setLoading(false);
       alert("Confirm Password is not Matched");
     }
   }

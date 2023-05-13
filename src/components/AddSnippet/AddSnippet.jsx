@@ -52,6 +52,7 @@ function AddSnippet() {
             value={
               [
                 { value: "array" },
+                { value: "string" },
                 { value: "linkedlist" },
                 { value: "tree" },
                 { value: "queue" },
@@ -66,6 +67,7 @@ function AddSnippet() {
             }}
           >
             <option value="array">Array</option>
+            <option value="string">String</option>
             <option value="linkedlist">Linked List</option>
             <option value="tree">Tree</option>
             <option value="queue">Queue</option>

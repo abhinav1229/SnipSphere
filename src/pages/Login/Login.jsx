@@ -29,9 +29,11 @@ function Login({ setReloadNavbar }) {
         setLoading(false);
         navigate("/");
       } else {
+        setLoading(false);
         alert("Email or password is wrong!");
       }
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   };

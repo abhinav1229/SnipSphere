@@ -77,6 +77,13 @@ function Navbar({ setParentTopic, showNav, setShowNav }) {
               </div>
             )}
           </div>
+          {/* <NavLink
+            className="navLink"
+            to={"/new"}
+            onClick={() => setNavOpen(width >= 815 && navOpen ? true : false)}
+          >
+            About Creator
+          </NavLink> */}
           {localData ? (
             <NavLink
               className="navLink"
