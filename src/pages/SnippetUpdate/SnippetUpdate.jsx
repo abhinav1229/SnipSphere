@@ -14,6 +14,7 @@ function SnippetUpdate() {
   const [codepython, setCodepython] = useState("");
   const [codejava, setCodejava] = useState("");
   const [loading, setLoading] = useState(true);
+  const [isPublic, setIsPublic] = useState(true);
   const { id } = useParams();
 
   const navigate = useNavigate();
@@ -29,7 +30,6 @@ function SnippetUpdate() {
       });
 
       let snippet = response.data[0];
-      console.log(snippet);
       setTopic(snippet.topic);
       setTitle(snippet.title);
       setDescription(snippet.description);
@@ -38,6 +38,7 @@ function SnippetUpdate() {
       setCodepython(snippet.codeobj.python);
       setTimeComplexity(snippet.timeComplexity);
       setSpaceComplexity(snippet.spaceComplexity);
+      setIsPublic(snippet.visibility);
       setLoading(false);
     }
 
@@ -59,6 +60,7 @@ function SnippetUpdate() {
       topic,
       spaceComplexity,
       codeobj,
+      visibility: isPublic,
       id,
     });
     navigate("/");
@@ -202,6 +204,22 @@ function SnippetUpdate() {
             value={spaceComplexity}
             onChange={(e) => setSpaceComplexity(e.target.value)}
           />
+        </div>
+        <div className="formGroup buttonContainer">
+          <div
+            onClick={() => setIsPublic(true)}
+            className="publicButton"
+            style={!isPublic ? { backgroundColor: "rgb(70, 70, 70)" } : null}
+          >
+            Public
+          </div>
+          <div
+            onClick={() => setIsPublic(false)}
+            className="privateButton"
+            style={isPublic ? { backgroundColor: "rgb(70, 70, 70)" } : null}
+          >
+            Private
+          </div>
         </div>
         <div className="formGroup">
           <button type="submit">Update</button>

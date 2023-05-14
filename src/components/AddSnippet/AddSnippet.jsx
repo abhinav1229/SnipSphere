@@ -14,6 +14,7 @@ function AddSnippet() {
   const [codecpp, setCodecpp] = useState("");
   const [codepython, setCodepython] = useState("");
   const [codejava, setCodejava] = useState("");
+  const [isPublic, setIsPublic] = useState(true);
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
@@ -33,6 +34,7 @@ function AddSnippet() {
       spaceComplexity,
       userId: localData._id,
       codeobj,
+      visibility: isPublic,
     });
     if (result.status === 200) {
       navigate("/");
@@ -177,6 +179,22 @@ function AddSnippet() {
             required
             onChange={(e) => setSpaceComplexity(e.target.value)}
           />
+        </div>
+        <div className="formGroup buttonContainer">
+          <div
+            onClick={() => setIsPublic(true)}
+            className="publicButton"
+            style={!isPublic ? { backgroundColor: "rgb(70, 70, 70)" } : null}
+          >
+            Public
+          </div>
+          <div
+            onClick={() => setIsPublic(false)}
+            className="privateButton"
+            style={isPublic ? { backgroundColor: "rgb(70, 70, 70)" } : null}
+          >
+            Private
+          </div>
         </div>
         <div className="formGroup">
           <button type="submit">Save</button>

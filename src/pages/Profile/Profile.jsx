@@ -31,7 +31,6 @@ function Profile() {
           userId: id,
         },
       });
-      console.log(userDetail.data);
       setFullName(userDetail.data[0].fullName.split(" ")[0]);
       setGitHub(userDetail.data[0].gitHub);
       setLoading(false);

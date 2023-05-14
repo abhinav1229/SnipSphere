@@ -86,6 +86,28 @@
   }
 } */
 
+.FormContainer form .buttonContainer {
+  flex-direction: row;
+}
+
+.FormContainer form .buttonContainer div {
+  background-color: rgb(0, 140, 255);
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.FormContainer form .formGroup .publicButton {
+  width: 90px;
+}
+
+.FormContainer form .formGroup .privateButton {
+  width: 90px;
+  margin-left: 10px;
+}
+
 @media screen and (max-width: 815px) {
   .FormContainer {
     margin-left: 0;

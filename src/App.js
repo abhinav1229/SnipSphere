@@ -17,7 +17,6 @@ export default function App() {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    console.log(width);
     setWidth(window.innerWidth);
     if (window.innerWidth >= 815) {
       setShowNav(true);

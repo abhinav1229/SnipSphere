@@ -116,6 +116,10 @@
   background-color: #e9e9e957;
 }
 
+.editButtonContainer {
+  width: 100%;
+}
+
 .editButtonContainer button {
   outline: none;
   border: none;
@@ -134,4 +138,9 @@
 
 .editButtonContainer button.delete {
   background-color: rgba(255, 109, 55, 0.911);
+}
+
+.editButtonContainer .visibilityButton {
+  margin-left: 20px;
+  border-radius: 20px;
 }

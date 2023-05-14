@@ -5,6 +5,11 @@ import { BASE_URL } from "../../helper/ref";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+// import Viewer from "react-code-viewer";
+// import { highlight, languages } from "prismjs/components/prism-core.js";
+// import "prismjs/components/prism-clike.js";
+// import "prismjs/components/prism-javascript.js";
+
 export default function Snippet(props) {
   const [copyText, setCopyText] = useState("Copy!");
   const [language, setLanguage] = useState("");
@@ -123,6 +128,9 @@ export default function Snippet(props) {
             onClick={() => deleteSnippet(props.details._id)}
           >
             Delete
+          </button>
+          <button className="visibilityButton" disabled>
+            {props.details.visibility ? "Public" : "Private"}
           </button>
         </div>
       )}
