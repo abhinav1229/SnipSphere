@@ -14,6 +14,9 @@ function Profile() {
   const [fullName, setFullName] = useState("");
   const [gitHub, setGitHub] = useState("");
   const [loading, setLoading] = useState(true);
+  const [publicView, setPublicView] = useState(true);
+  const [allPublicSnippets, setAllPublicSnippets] = useState([]);
+  const [allPrivateSnippets, setAllPrivateSnippets] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -24,6 +27,16 @@ function Profile() {
         },
       });
       setAllSnippets(response.data);
+      setAllPublicSnippets(
+        response.data.filter((snippet) => {
+          return snippet.visibility === true;
+        })
+      );
+      setAllPrivateSnippets(
+        response.data.filter((snippet) => {
+          return snippet.visibility === false;
+        })
+      );
     }
     async function fecthContributor() {
       let userDetail = await axios.get(`${BASE_URL}/user/userInfoById`, {
@@ -38,6 +51,15 @@ function Profile() {
     fecthContributor();
     fetchSnippets();
   }, []);
+
+  function showPublicData() {
+    setPublicView(true);
+  }
+
+  function showPrivateData() {
+    setPublicView(false);
+  }
+
   return (
     <div className="Profile">
       {loading ? (
@@ -45,10 +67,11 @@ function Profile() {
       ) : (
         <>
           <div className="userInfoContainer">
-            <div className="fullName">
-              Hi there 👋, I'm {fullName && fullName} 💻{" "}
-            </div>
+            <div className="fullName">Hi there 👋</div>
 
+            <div className="fullName" style={{ marginTop: "10px" }}>
+              I'm {fullName && fullName}
+            </div>
             {/* <div className="iconContainer"> */}
             <NavLink to={`https://github.com/${gitHub}`} target="_blank">
               <img
@@ -64,13 +87,32 @@ function Profile() {
             </div>
             {/* </div> */}
           </div>
+          <div className="filterContainer">
+            <button
+              className={publicView ? "selected" : ""}
+              onClick={showPublicData}
+            >
+              Public ({allPublicSnippets && allPublicSnippets.length})
+            </button>
+            <button
+              className={!publicView ? "selected" : ""}
+              onClick={showPrivateData}
+            >
+              Private ({allPrivateSnippets && allPrivateSnippets.length})
+            </button>
+          </div>
           <div className="code-container">
-            {allSnippets &&
-              allSnippets.map((snippet, index) => {
-                return (
-                  <Snippet topic={"array"} details={snippet} key={index} />
-                );
-              })}
+            {allPublicSnippets && publicView
+              ? allPublicSnippets.map((snippet, index) => {
+                  return (
+                    <Snippet topic={"array"} details={snippet} key={index} />
+                  );
+                })
+              : allPrivateSnippets.map((snippet, index) => {
+                  return (
+                    <Snippet topic={"array"} details={snippet} key={index} />
+                  );
+                })}
           </div>
         </>
       )}
