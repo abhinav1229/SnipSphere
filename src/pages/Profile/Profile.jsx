@@ -60,6 +60,8 @@ function Profile() {
     setPublicView(false);
   }
 
+  let localData = JSON.parse(localStorage.getItem("userInfoSnipSphere"));
+
   return (
     <div className="Profile">
       {loading ? (
@@ -94,12 +96,14 @@ function Profile() {
             >
               Public ({allPublicSnippets && allPublicSnippets.length})
             </button>
-            <button
-              className={!publicView ? "selected" : ""}
-              onClick={showPrivateData}
-            >
-              Private ({allPrivateSnippets && allPrivateSnippets.length})
-            </button>
+            {localData && localData._id == id && (
+              <button
+                className={!publicView ? "selected" : ""}
+                onClick={showPrivateData}
+              >
+                Private ({allPrivateSnippets && allPrivateSnippets.length})
+              </button>
+            )}
           </div>
           <div className="code-container">
             {allPublicSnippets && publicView
