@@ -25,7 +25,6 @@ export default function Search(props) {
     } else {
       async function fetchAllSnippets() {
         let response = await axios.get(`${BASE_URL}/snippets/allsnippets`);
-        console.log(response.data);
         let allTopics = [
           "array",
           "linkedlist",
@@ -57,7 +56,10 @@ export default function Search(props) {
             let snippet = snippets[j];
 
             // If the  snippet title contains the search text, set isSnippetFound and matchingSnippet
-            if (snippet.title.toLowerCase().indexOf(searchText) !== -1) {
+            if (
+              snippet.title.toLowerCase().indexOf(searchText) !== -1 &&
+              snippet.visibility
+            ) {
               setIsSnippetFound(true);
               setMatchingSnippet(snippet);
               return;

@@ -51,8 +51,8 @@ export default function SnippetList(props) {
         })
       ) : (
         <div className="noSnippetMessage">
-          Sorry! We didn't found any snippets of{" "}
-          <span style={{ color: "coral" }}>{topic}</span>.
+          Sorry! We didn't found any snippets of
+          <span style={{ color: "yellow" }}> {topic}</span>.
         </div>
       )}
     </div>
