@@ -62,6 +62,9 @@ function Login({ setReloadNavbar }) {
             />
           </div>
           <div className="formGroup">
+            <NavLink to={"/forgot"}>forgot password?</NavLink>
+          </div>
+          <div className="formGroup">
             <button type="submit">Login</button>
             <br />
             <NavLink to={"/signup"}>

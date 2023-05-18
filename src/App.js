@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import { useEffect, useState } from "react";
 import AddSnippet from "./components/AddSnippet/AddSnippet.jsx";
 import SnippetUpdate from "./pages/SnippetUpdate/SnippetUpdate.jsx";
+import Forgot from "./pages/Forgot/Forgot.jsx";
 
 export default function App() {
   const [parentTopic, setParentTopic] = useState("array");
@@ -49,6 +50,7 @@ export default function App() {
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/update/:id" element={<SnippetUpdate />} />
         <Route path="/new" element={<AddSnippet />} />
+        <Route path="/forgot" element={<Forgot />} />
       </Routes>
     </Router>
   );
