@@ -62,7 +62,12 @@ function Login({ setReloadNavbar }) {
             />
           </div>
           <div className="formGroup">
-            <NavLink to={"/forgot"}>forgot password?</NavLink>
+            <NavLink
+              to={"/forgot"}
+              style={{ color: "grey", textDecoration: "none" }}
+            >
+              Forgot Password?
+            </NavLink>
           </div>
           <div className="formGroup">
             <button type="submit">Login</button>
