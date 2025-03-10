@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@react-oauth/google": "^0.11.0",
     "axios": "^1.4.0",
     "json-loader": "^0.5.7",
     "react-loading": "^2.0.3",

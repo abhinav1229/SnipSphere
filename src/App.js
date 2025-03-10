@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import AddSnippet from "./components/AddSnippet/AddSnippet.jsx";
 import SnippetUpdate from "./pages/SnippetUpdate/SnippetUpdate.jsx";
 import Forgot from "./pages/Forgot/Forgot.jsx";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 export default function App() {
   const [parentTopic, setParentTopic] = useState("array");
@@ -27,31 +28,33 @@ export default function App() {
   }, [width, window.innerWidth]);
 
   return (
-    <Router>
-      <Navbar
-        setParentTopic={setParentTopic}
-        showNav={showNav}
-        setShowNav={setShowNav}
-      />
-      <Routes>
-        <Route path="/" element={<Home parentTopic={parentTopic} />} />
-        <Route
-          path="/login"
-          element={
-            <Login
-              setReloadNavbar={setReloadNavbar}
-              setShowNav={setShowNav}
-              showNav={showNav}
-            />
-          }
+    <GoogleOAuthProvider clientId="1067430878104-dr6hteircvvgcbsjvn79ks7lr8li54ic.apps.googleusercontent.com">
+      <Router>
+        <Navbar
+          setParentTopic={setParentTopic}
+          showNav={showNav}
+          setShowNav={setShowNav}
         />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/profile/:id" element={<Profile />} />
-        <Route path="/update/:id" element={<SnippetUpdate />} />
-        <Route path="/new" element={<AddSnippet />} />
-        <Route path="/forgot" element={<Forgot />} />
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path="/" element={<Home parentTopic={parentTopic} />} />
+          <Route
+            path="/login"
+            element={
+              <Login
+                setReloadNavbar={setReloadNavbar}
+                setShowNav={setShowNav}
+                showNav={showNav}
+              />
+            }
+          />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/update/:id" element={<SnippetUpdate />} />
+          <Route path="/new" element={<AddSnippet />} />
+          <Route path="/forgot" element={<Forgot />} />
+        </Routes>
+      </Router>
+    </GoogleOAuthProvider>
   );
 }
